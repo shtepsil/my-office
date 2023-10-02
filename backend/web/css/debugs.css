@@ -1,0 +1,21 @@
+div[class*='df ress']{
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    padding: 15px;
+    background-color: black;
+    height: auto;
+    min-width: 265px;
+    min-height: 55px;
+    z-index: 999;
+    color: white;
+}
+div[class*='d ress']{
+    padding: 15px;
+    background-color: black;
+    height: auto;
+    min-width: 265px;
+    min-height: 55px;
+    z-index: 999;
+    color: white;
+}

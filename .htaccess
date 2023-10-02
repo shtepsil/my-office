@@ -1,0 +1,43 @@
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
+
+# if request begins with /admin remove admin and ad /backend/web/
+RewriteCond %{REQUEST_URI} ^/api
+RewriteRule ^api\/?(.*) /api/web/$1
+
+# Если запрос начинается с /admin-old направляем на /backendold/web/
+RewriteCond %{REQUEST_URI} ^/admin-old
+RewriteRule ^admin-old\/?(.*) /backendold/web/$1
+
+# if request begins with /admin remove admin and ad /backend/web/
+RewriteCond %{REQUEST_URI} ^/admin
+RewriteRule ^admin\/?(.*) /backend/web/$1
+
+# other requests add /frontend/web/$1
+RewriteCond %{REQUEST_URI} !^/(frontend/web|backend/web|admin|common|api|admin-old)
+RewriteRule (.*) /frontend/web/$1
+
+# if frontend request
+RewriteCond %{REQUEST_URI} ^/frontend/web
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /frontend/web/index.php
+
+# if backend request
+RewriteCond %{REQUEST_URI} ^/backend/web
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /backend/web/index.php
+
+# if api request
+RewriteCond %{REQUEST_URI} ^/api/web
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /api/web/index.php
+
+# if backendold request
+RewriteCond %{REQUEST_URI} ^/backendold/web
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /backendold/web/index.php

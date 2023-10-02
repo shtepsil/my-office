@@ -1,0 +1,33 @@
+{
+  "name": "lxShaDoWxl/yii2-components",
+  "version": "0.0.1",
+  "description": "Yii2 components",
+  "keywords": [
+    "yii2",
+    "yii2 components",
+    "ACE",
+    "ace-editor",
+    "Cloud9 Editor"
+  ],
+  "minimum-stability": "dev",
+  "license": "BSD-3-Clause",
+  "type": "yii2-extension",
+  "homepage": "https://github.com/lxShaDoWxl/yii2-components",
+  "support": {
+    "issues": "https://github.com/lxShaDoWxl/yii2-components/issues?state=open",
+    "source": "https://github.com/lxShaDoWxl/yii2-components"
+  },
+  "authors": [
+    {
+      "name": "lxShaDoWxl (Viktor Vassilyev)",
+      "email": "l2dforce.ru@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {"shadow": ""}
+  },
+  "require": {
+    "yiisoft/yii2": "*",
+    "bower-asset/ace-builds": "~1.1"
+  }
+}
